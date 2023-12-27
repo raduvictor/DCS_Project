@@ -8,8 +8,7 @@ import Enumerations.TransitionCondition;
 import Enumerations.TransitionOperation;
 
 public class Intersection2 {
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         PetriNet pn = new PetriNet();
         pn.PetriNetName = "Controller 2";
 
@@ -61,7 +60,7 @@ public class Intersection2 {
         T10Ct0.SetNextCondition(LogicConnector.AND, T10Ct1);
 
         GuardMapping grdT10 = new GuardMapping();
-        grdT10.condition= T10Ct0;
+        grdT10.condition = T10Ct0;
         grdT10.Activations.add(new Activation(t10, "P10", TransitionOperation.AddElement, "P3"));
 
         pn.Transitions.add(t10);
@@ -76,7 +75,7 @@ public class Intersection2 {
         T12Ct0.SetNextCondition(LogicConnector.AND, T12Ct1);
 
         GuardMapping grdT12 = new GuardMapping();
-        grdT12.condition= T12Ct0;
+        grdT12.condition = T12Ct0;
         grdT12.Activations.add(new Activation(t12, "P12", TransitionOperation.AddElement, "P3"));
 
         pn.Transitions.add(t12);
@@ -91,7 +90,7 @@ public class Intersection2 {
         T11Ct0.SetNextCondition(LogicConnector.AND, T11Ct1);
 
         GuardMapping grdT11 = new GuardMapping();
-        grdT11.condition= T11Ct0;
+        grdT11.condition = T11Ct0;
         grdT11.Activations.add(new Activation(t11, "P3", TransitionOperation.AddElement, "P11"));
 
         pn.Transitions.add(t11);
@@ -106,7 +105,7 @@ public class Intersection2 {
         T3Ct0.SetNextCondition(LogicConnector.AND, T3Ct1);
 
         GuardMapping grdT3 = new GuardMapping();
-        grdT3.condition= T3Ct0;
+        grdT3.condition = T3Ct0;
         grdT3.Activations.add(new Activation(t3, "P3", TransitionOperation.AddElement, "P4"));
 
         pn.Transitions.add(t3);
