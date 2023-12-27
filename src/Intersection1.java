@@ -1,14 +1,13 @@
 import Components.*;
 import DataObjects.DataCar;
 import DataObjects.DataCarQueue;
-import DataObjects.DataString;
 import DataObjects.DataTransfer;
 import DataOnly.TransferOperation;
 import Enumerations.LogicConnector;
 import Enumerations.TransitionCondition;
 import Enumerations.TransitionOperation;
 
-public class Main {
+public class Intersection1 {
     public static void main(String[] args) {
        PetriNet pn = new PetriNet();
        pn.PetriNetName = "Controller 1";
@@ -58,7 +57,7 @@ public class Main {
     // Implementing P2 as an output channel from controller 1 to controller 2
     DataTransfer p2 = new DataTransfer();
     p2.SetName("P2");
-    p2.Value = new TransferOperation("localhost", "1080", "p3");
+    p2.Value = new TransferOperation("localhost", "1081", "p3");
     pn.PlaceList.add(p2);
 
     // First way of access to the intersection from the split of the road
