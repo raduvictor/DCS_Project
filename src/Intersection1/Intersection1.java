@@ -1,3 +1,5 @@
+package Intersection1;
+
 import Components.*;
 import DataObjects.DataCar;
 import DataObjects.DataCarQueue;
@@ -183,7 +185,7 @@ public class Intersection1 {
         frame.petriNet = pn;
         frame.setVisible(true);
 
-        // Intersection2.main(args); // Start the second controller
+        // Intersection2.Intersection2.main(args); // Start the second controller
         InputCar.main(args); // Start the input car GUI
     }
 }
