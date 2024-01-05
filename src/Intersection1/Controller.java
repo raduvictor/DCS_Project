@@ -210,6 +210,7 @@ public class Controller {
         grdT3.condition = T3Ct0;
         grdT3.Activations.add(new Activation(t3, "R1 G2 R3", TransitionOperation.Move, "R1 Y2 R3"));
         grdT3.Activations.add(new Activation(t3, "Y", TransitionOperation.SendOverNetwork, "OP2"));
+        grdT3.Activations.add(new Activation(t3, "Delay_Ten", TransitionOperation.DynamicDelay, ""));
 
         Condition T3Ct2 = new Condition(t3, "R1 G2 R3", TransitionCondition.NotNull);
         Condition T3Ct3 = new Condition(t3, "R1 G2 R3", TransitionCondition.IsNull);
@@ -259,7 +260,8 @@ public class Controller {
         grdT5.condition = T5Ct0;
         grdT5.Activations.add(new Activation(t5, "R1 R2 G3", TransitionOperation.Move, "R1 R2 Y3"));
         grdT5.Activations.add(new Activation(t5, "Y", TransitionOperation.SendOverNetwork, "OP3"));
-
+        grdT5.Activations.add(new Activation(t5, "Delay_Ten", TransitionOperation.DynamicDelay, ""));
+        
         Condition T5Ct2 = new Condition(t5, "R1 R2 G3", TransitionCondition.NotNull);
         Condition T5Ct3 = new Condition(t5, "in3", TransitionCondition.IsNull);
         T5Ct2.SetNextCondition(LogicConnector.AND, T5Ct3);
