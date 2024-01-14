@@ -149,6 +149,10 @@ public class Intersection1 {
         P30.SetName("P_30");
         petriNet.PlaceList.add(P30);
 
+        DataTransfer P_street1 = new DataTransfer();
+        P_street1.SetName("P_street1");
+        P_street1.SetValue(new TransferOperation("localhost", "1082", "P31"));
+        petriNet.PlaceList.add(P_street1);
 
         // ---------------------------------------------------------------------------------------
         // ---------------------------- Transitions ----------------------------------------------
@@ -482,6 +486,40 @@ public class Intersection1 {
 
         T9.Delay = 0;
         petriNet.Transitions.add(T9);
+
+        // T_street1 ---------------------------------------------------------------------------------------
+
+        PetriTransition T_street1 = new PetriTransition(petriNet);
+        T_street1.TransitionName = "T_street1";
+
+        T_street1.InputPlaceName.add("P_30");
+
+        Condition T_street1Ct1 = new Condition(T_street1, "P_30", TransitionCondition.HaveCar);
+
+        GuardMapping grdT_street1 = new GuardMapping();
+        grdT_street1.condition = T_street1Ct1;
+        grdT_street1.Activations.add(new Activation(T_street1, "P_30", TransitionOperation.Move, "P_street1"));
+
+        T_street1.GuardMappingList.add(grdT_street1);
+        T_street1.Delay = 0;
+        petriNet.Transitions.add(T_street1);
+
+        // T_street2 ---------------------------------------------------------------------------------------
+
+        PetriTransition T_street2 = new PetriTransition(petriNet);
+        T_street2.TransitionName = "T_street2";
+
+        T_street2.InputPlaceName.add("P_street1");
+
+        Condition T_street2Ct1 = new Condition(T_street2, "P_street1", TransitionCondition.HaveCar);
+
+        GuardMapping grdT_street2 = new GuardMapping();
+        grdT_street2.condition = T_street2Ct1;
+        grdT_street2.Activations.add(new Activation(T_street2, "P_street1", TransitionOperation.SendOverNetwork, "P_street2"));
+
+        T_street2.GuardMappingList.add(grdT_street2);
+        T_street2.Delay = 0;
+        petriNet.Transitions.add(T_street2);
 
         // -------------------------------------------------------------------------------------------
         // ----------------------------PNStart--------------------------------------------------------

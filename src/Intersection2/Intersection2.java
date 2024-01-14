@@ -38,9 +38,9 @@ public class Intersection2 {
         // --------------------------------------------------------------------------------------
         // ---------------------------- Upper part of the intersection --------------------------
         // --------------------------------------------------------------------------------------
-        DataCar P30 = new DataCar();
-        P30.SetName("P_30");
-        petriNet.PlaceList.add(P30);
+        DataCar P_street2 = new DataCar();
+        P_street2.SetName("P_street2");
+        petriNet.PlaceList.add(P_street2);
 
         DataTransfer OP31 = new DataTransfer();
         OP31.SetName("OP_31");
@@ -147,26 +147,26 @@ public class Intersection2 {
         PetriTransition T30 = new PetriTransition(petriNet);
         T30.TransitionName = "T30";
 
-        T30.InputPlaceName.add("P_30");
+        T30.InputPlaceName.add("P_street2");
         T30.InputPlaceName.add("P_32");
 
-        Condition T30Ct1 = new Condition(T30, "P_30", TransitionCondition.NotNull);
+        Condition T30Ct1 = new Condition(T30, "P_street2", TransitionCondition.NotNull);
         Condition T30Ct2 = new Condition(T30, "P_32", TransitionCondition.CanAddCars);
         T30Ct1.SetNextCondition(LogicConnector.AND, T30Ct2);
 
         GuardMapping grdT30 = new GuardMapping();
         grdT30.condition = T30Ct1;
-        grdT30.Activations.add(new Activation(T30, "P_30", TransitionOperation.AddElement, "P_32"));
+        grdT30.Activations.add(new Activation(T30, "P_street2", TransitionOperation.AddElement, "P_32"));
         T30.GuardMappingList.add(grdT30);
 
-        Condition T30Ct3 = new Condition(T30, "P_30", TransitionCondition.NotNull);
+        Condition T30Ct3 = new Condition(T30, "P_street2", TransitionCondition.NotNull);
         Condition T30Ct4 = new Condition(T30, "P_32", TransitionCondition.CanNotAddCars);
         T30Ct3.SetNextCondition(LogicConnector.AND, T30Ct4);
 
         GuardMapping grdT30_2 = new GuardMapping();
         grdT30_2.condition = T30Ct3;
         grdT30_2.Activations.add(new Activation(T30, "full", TransitionOperation.SendOverNetwork, "OP_31"));
-        grdT30_2.Activations.add(new Activation(T30, "P_30", TransitionOperation.Move, "P_30"));
+        grdT30_2.Activations.add(new Activation(T30, "P_street2", TransitionOperation.Move, "P_street2"));
         T30.GuardMappingList.add(grdT30_2);
 
         T30.Delay = 0;
