@@ -151,7 +151,7 @@ public class Intersection1 {
 
         DataTransfer P_street1 = new DataTransfer();
         P_street1.SetName("P_street1");
-        P_street1.SetValue(new TransferOperation("localhost", "1082", "P31"));
+        P_street1.SetValue(new TransferOperation("localhost", "1081", "P_street2"));
         petriNet.PlaceList.add(P_street1);
 
         // ---------------------------------------------------------------------------------------
@@ -494,7 +494,7 @@ public class Intersection1 {
 
         T_street1.InputPlaceName.add("P_30");
 
-        Condition T_street1Ct1 = new Condition(T_street1, "P_30", TransitionCondition.HaveCar);
+        Condition T_street1Ct1 = new Condition(T_street1, "P_30", TransitionCondition.NotNull);
 
         GuardMapping grdT_street1 = new GuardMapping();
         grdT_street1.condition = T_street1Ct1;
@@ -511,7 +511,7 @@ public class Intersection1 {
 
         T_street2.InputPlaceName.add("P_street1");
 
-        Condition T_street2Ct1 = new Condition(T_street2, "P_street1", TransitionCondition.HaveCar);
+        Condition T_street2Ct1 = new Condition(T_street2, "P_street1", TransitionCondition.NotNull);
 
         GuardMapping grdT_street2 = new GuardMapping();
         grdT_street2.condition = T_street2Ct1;
