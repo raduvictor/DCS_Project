@@ -45,7 +45,7 @@ public class Intersection1 {
         DataTransfer OP3 = new DataTransfer();
         OP3.SetName("OP_3");
         petriNet.PlaceList.add(OP3);
-        OP3.Value = new TransferOperation("localhost", "1083", "in");
+        OP3.Value = new TransferOperation("localhost", "1082", "in");
 
         DataCarQueue P1 = new DataCarQueue();
         P1.Value.Size = 3;
@@ -85,7 +85,7 @@ public class Intersection1 {
         DataTransfer OP15 = new DataTransfer();
         OP15.SetName("OP_15");
         petriNet.PlaceList.add(OP15);
-        OP15.Value = new TransferOperation("localhost", "1083", "in");
+        OP15.Value = new TransferOperation("localhost", "1082", "in");
 
         DataCar P9 = new DataCar();
         P9.SetName("P_9");
@@ -124,7 +124,7 @@ public class Intersection1 {
         DataTransfer OP21 = new DataTransfer();
         OP21.SetName("OP_21");
         petriNet.PlaceList.add(OP21);
-        OP21.Value = new TransferOperation("localhost", "1083", "in");
+        OP21.Value = new TransferOperation("localhost", "1082", "in");
 
         // DOWN
         DataCarQueue P22 = new DataCarQueue();
