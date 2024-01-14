@@ -371,7 +371,7 @@ public class Intersection2 {
 
         GuardMapping grdT39 = new GuardMapping();
         grdT39.condition = T39Ct1;
-        grdT39.Activations.add(new Activation(T39, "P_42", TransitionOperation.PopElementWithoutTarget, "P_40"));
+        grdT39.Activations.add(new Activation(T39, "P_42", TransitionOperation.PopElementWithTargetToQueue, "P_40"));
         T39.GuardMappingList.add(grdT39);
 
         T39.Delay = 0;
@@ -409,7 +409,7 @@ public class Intersection2 {
 
         GuardMapping grdT42 = new GuardMapping();
         grdT42.condition = T42Ct1;
-        grdT42.Activations.add(new Activation(T42, "P_42", TransitionOperation.PopElementWithoutTarget, "P_50"));
+        grdT42.Activations.add(new Activation(T42, "P_42", TransitionOperation.PopElementWithTargetToQueue, "P_50"));
         T42.GuardMappingList.add(grdT42);
 
         T42.Delay = 0;

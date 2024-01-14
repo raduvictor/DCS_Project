@@ -316,7 +316,7 @@ public class Intersection1 {
 
         GuardMapping grdT3 = new GuardMapping();
         grdT3.condition = T3Ct1;
-        grdT3.Activations.add(new Activation(T3, "P_5", TransitionOperation.PopElementWithoutTarget, "P_7"));
+        grdT3.Activations.add(new Activation(T3, "P_5", TransitionOperation.PopElementWithTargetToQueue, "P_7"));
         T3.GuardMappingList.add(grdT3);
 
         T3.Delay = 0;
@@ -426,7 +426,7 @@ public class Intersection1 {
 
         GuardMapping grdT11 = new GuardMapping();
         grdT11.condition = T11Ct1;
-        grdT11.Activations.add(new Activation(T11, "P_5", TransitionOperation.PopElementWithoutTarget, "P_22"));
+        grdT11.Activations.add(new Activation(T11, "P_5", TransitionOperation.PopElementWithTargetToQueue, "P_22"));
         T11.GuardMappingList.add(grdT11);
 
         T11.Delay = 0;
@@ -464,7 +464,7 @@ public class Intersection1 {
 
         GuardMapping grdT5 = new GuardMapping();
         grdT5.condition = T5Ct1;
-        grdT5.Activations.add(new Activation(T5, "P_5", TransitionOperation.PopElementWithoutTarget, "P_6"));
+        grdT5.Activations.add(new Activation(T5, "P_5", TransitionOperation.PopElementWithTargetToQueue, "P_6"));
         T5.GuardMappingList.add(grdT5);
 
         T5.Delay = 0;
@@ -475,7 +475,7 @@ public class Intersection1 {
         PetriTransition T9 = new PetriTransition(petriNet);
         T9.TransitionName = "T9";
 
-        T9.InputPlaceName.add("P6");
+        T9.InputPlaceName.add("P_6");
 
         Condition T9Ct1 = new Condition(T9, "P_6", TransitionCondition.HaveCar);
 
@@ -498,28 +498,28 @@ public class Intersection1 {
 
         GuardMapping grdT_street1 = new GuardMapping();
         grdT_street1.condition = T_street1Ct1;
-        grdT_street1.Activations.add(new Activation(T_street1, "P_30", TransitionOperation.Move, "P_street1"));
+        grdT_street1.Activations.add(new Activation(T_street1, "P_30", TransitionOperation.SendOverNetwork, "P_street1"));
 
         T_street1.GuardMappingList.add(grdT_street1);
         T_street1.Delay = 0;
         petriNet.Transitions.add(T_street1);
 
-        // T_street2 ---------------------------------------------------------------------------------------
-
-        PetriTransition T_street2 = new PetriTransition(petriNet);
-        T_street2.TransitionName = "T_street2";
-
-        T_street2.InputPlaceName.add("P_street1");
-
-        Condition T_street2Ct1 = new Condition(T_street2, "P_street1", TransitionCondition.NotNull);
-
-        GuardMapping grdT_street2 = new GuardMapping();
-        grdT_street2.condition = T_street2Ct1;
-        grdT_street2.Activations.add(new Activation(T_street2, "P_street1", TransitionOperation.SendOverNetwork, "P_street2"));
-
-        T_street2.GuardMappingList.add(grdT_street2);
-        T_street2.Delay = 0;
-        petriNet.Transitions.add(T_street2);
+//        // T_street2 ---------------------------------------------------------------------------------------
+//
+//        PetriTransition T_street2 = new PetriTransition(petriNet);
+//        T_street2.TransitionName = "T_street2";
+//
+//        T_street2.InputPlaceName.add("P_street1");
+//
+//        Condition T_street2Ct1 = new Condition(T_street2, "P_street1", TransitionCondition.NotNull);
+//
+//        GuardMapping grdT_street2 = new GuardMapping();
+//        grdT_street2.condition = T_street2Ct1;
+//        grdT_street2.Activations.add(new Activation(T_street2, "P_street1", TransitionOperation.SendOverNetwork, "P_street2"));
+//
+//        T_street2.GuardMappingList.add(grdT_street2);
+//        T_street2.Delay = 0;
+//        petriNet.Transitions.add(T_street2);
 
         // -------------------------------------------------------------------------------------------
         // ----------------------------PNStart--------------------------------------------------------
